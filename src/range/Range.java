@@ -24,7 +24,7 @@ public class Range implements Iterable<Integer> {
         //If steps are negative
         if (steps < 0) {
             int posSteps = -steps;
-            int length = Math.max(0, (start - stop + 1 - steps) / steps);
+            int length = Math.max(0, (start - stop + 1 - posSteps) / posSteps);
             return length;
         }
 
@@ -54,7 +54,7 @@ public class Range implements Iterable<Integer> {
             int index = 0 ;
             @Override
             public boolean hasNext(){
-                return index > length;
+                return index < length;
             }
 
             @Override
